@@ -20,6 +20,11 @@ class App extends Component {
     this.refs.jam.focus();
   }
 
+  removeTodo = (i) => {
+    this.state.todos.splice(i,1);
+    this.setState({todos:this.state.todos});
+  }
+
 
   render() {
     return (
