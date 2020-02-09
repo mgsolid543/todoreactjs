@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './header';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 class App extends Component {
   constructor() {
@@ -29,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h3>Aplikasi Aktivitas Harian</h3>
+        <Header />
 
         <form ref="formulir" className="form-inline">
           <input type="text" className="form-control" ref="jam" placeholder="jam aktivitas"></input>&nbsp;
@@ -39,6 +41,13 @@ class App extends Component {
         <hr />
         <div>
         <ul>
+          <CSSTransitionGroup
+            transitionName="animasi"
+            transitionEnter={true}
+            transitionEnterTimeout={500}
+            transitionLeave={true}
+            transitionLeaveTimeout={500}
+          >
           { this.state.todos.map((data, i) =>
             <li key={i}>
               <div>
@@ -46,6 +55,7 @@ class App extends Component {
               </div>
             </li>
           )}
+          </CSSTransitionGroup>
         </ul>
         </div>
       </div>
