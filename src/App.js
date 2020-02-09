@@ -51,7 +51,8 @@ class App extends Component {
           { this.state.todos.map((data, i) =>
             <li key={i}>
               <div>
-                <button onClick={ ()=>this.removeTodo(i) } className="btn btn-outline-danger">hapus</button>{data.jam} : {data.aktivitas}
+                <button onClick={ ()=>this.removeTodo(i) } className="btn btn-outline-danger">hapus</button> {data.jam} : {data.aktivitas}
+                <hr/>
               </div>
             </li>
           )}
