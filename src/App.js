@@ -31,10 +31,10 @@ class App extends Component {
       <div>
         <h3>Aplikasi Aktivitas Harian</h3>
 
-        <form ref="formulir">
-          <input type="text" ref="jam" placeholder="jam aktivitas"></input>
-          <input type="text" ref="aktivitas" placeholder="jenis aktivitas"></input>
-          <button onClick={this.addTodo}>simpan</button>
+        <form ref="formulir" className="form-inline">
+          <input type="text" className="form-control" ref="jam" placeholder="jam aktivitas"></input>&nbsp;
+          <input type="text" className="form-control" ref="aktivitas" placeholder="jenis aktivitas"></input>&nbsp;
+          <button onClick={this.addTodo} className="btn btn-info">simpan</button>
         </form>
         <hr />
         <div>
@@ -42,7 +42,7 @@ class App extends Component {
           { this.state.todos.map((data, i) =>
             <li key={i}>
               <div>
-                <button onClick={ ()=>this.removeTodo(i) }>hapus</button>{data.jam} : {data.aktivitas}
+                <button onClick={ ()=>this.removeTodo(i) } className="btn btn-outline-danger">hapus</button>{data.jam} : {data.aktivitas}
               </div>
             </li>
           )}
